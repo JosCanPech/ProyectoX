@@ -8,10 +8,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=h1, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/LoginC.css">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Retirar Dinero</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form action="Svinicio" method="POST">
+        <h1 class ="title"> Transferir a una Cuenta </h1>
+        <br>
+        <p>
+        <label>Ingrese la cuenta a transferir: <input placeholder=" cuenta del receptor" type="text" name="Usua"> </label> 
+        </p>
+        <br>
+        <p>
+        <label>Ingrese la cantidad a transferir: <input placeholder=" cantidad" type="text" name="Usua"> </label> 
+        </p>
+        <br>
+        <button type="submit">Retirar Dinero</button>
+
     </body>
+    
 </html>
