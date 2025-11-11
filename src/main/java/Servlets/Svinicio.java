@@ -4,6 +4,8 @@
  */
 package Servlets;
 
+//import DAO.MovimientoDAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -11,6 +13,14 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+//import Movimientos.DatosSesion;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 
 /**
  *
@@ -18,6 +28,11 @@ import jakarta.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "Svinicio", urlPatterns = {"/Svinicio"})
 public class Svinicio extends HttpServlet {
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/banco_db?useSSL=false&serverTimezone=UTC";
+    private static final String USER = "root";
+    private static final String PASS = "";
+    
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -27,7 +42,17 @@ public class Svinicio extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int Nocuenta = Integer.parseInt(request.getParameter("nocuenta"));
+        String contraseña = request.getParameter("password");
+
+       // MovimientoDAO DAO = new MovimientoDAO();
+
+        //DatosSesion datos = DAO.Consulta(Nocuenta, contraseña);
+
+        HttpSession session = request.getSession(true);
+        //session.setAttribute("datosUsuario", datos);
+        RequestDispatcher rd = request.getRequestDispatcher("Menu.jsp");
+        rd.forward(request, response);
     }
 
     @Override
