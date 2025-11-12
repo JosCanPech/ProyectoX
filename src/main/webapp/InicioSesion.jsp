@@ -1,9 +1,3 @@
-<%-- 
-    Document   : InicioSesion
-    Created on : 11 nov 2025, 8:12:03 a.m.
-    Author     : josue
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +10,7 @@
     </head>
     <body>
         <form action="Svinicio" method="POST">
-        <h1 class ="title"> Login </h1>
+        <h1 class ="title"> Iniciar Sesion </h1>
         <label>
             <input placeholder="Usuario/Cuenta" type="text" name="Usua">
         </label>
