@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Transferencia
-    Created on : 11 nov 2025, 8:13:09 a.m.
-    Author     : josue
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

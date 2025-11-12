@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Retiro
-    Created on : 11 nov 2025, 8:12:46 a.m.
-    Author     : josue
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
