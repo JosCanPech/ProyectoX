@@ -10,25 +10,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-//import Movimientos.DatosSesion;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-import java.sql.SQLException;
+import Movimientos.DatosSesion;
 
 
-/**
- *
- * @author josue
- */
 @WebServlet(name = "Svinicio", urlPatterns = {"/Svinicio"})
 public class Svinicio extends HttpServlet {
     
-    private static final String URL = "jdbc:mysql://localhost:3306/banco_db?useSSL=false&serverTimezone=UTC";
-    private static final String USER = "root";
-    private static final String PASS = "";
+    //private static final String URL = "jdbc:mysql://localhost:3306/banco_db?useSSL=false&serverTimezone=UTC";
+    //private static final String USER = "root";
+    //private static final String PASS = "";
     
 
     
@@ -42,15 +32,16 @@ public class Svinicio extends HttpServlet {
         int Nocuenta = Integer.parseInt(request.getParameter("nocuenta"));
         String contraseña = request.getParameter("password");
 
-       // MovimientoDAO DAO = new MovimientoDAO();
+        MovimientoDAO DAO = new MovimientoDAO();
 
-        //DatosSesion datos = DAO.Consulta(Nocuenta, contraseña);
+        DatosSesion datos = DAO.Consulta(Nocuenta, contraseña);
 
         HttpSession session = request.getSession(true);
-        //session.setAttribute("datosUsuario", datos);
-        RequestDispatcher rd = request.getRequestDispatcher("Menu.jsp");
+        session.setAttribute("datosUsuario", datos);
+        RequestDispatcher rd = request.getRequestDispatcher("MenuOpciones.jsp");
         rd.forward(request, response);
     }
+    
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

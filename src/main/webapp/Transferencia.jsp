@@ -9,7 +9,7 @@
         <title>Retirar Dinero</title>
     </head>
     <body>
-        <form action="Svinicio" method="POST">
+        <form action="SvTransferencia" method="POST">
         <h1 class ="title"> Transferir a una Cuenta </h1>
         <br>
         <p>
@@ -17,7 +17,7 @@
         </p>
         <br>
         <p>
-        <label>Ingrese la cantidad a transferir: <input placeholder=" cantidad" type="text" name="Usua"> </label> 
+        <label>Ingrese la cantidad a transferir: <input placeholder=" cantidad" type="number" name="Usua"> </label> 
         </p>
         <br>
         <button type="submit">Retirar Dinero</button>

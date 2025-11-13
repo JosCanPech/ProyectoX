@@ -9,7 +9,7 @@
         <title>Retirar Dinero</title>
     </head>
     <body>
-        <form action="Svinicio" method="POST">
+        <form action="SvRetiro" method="POST">
         <h1 class ="title"> Retirar Dinero </h1>
         <br>
         <p>
