@@ -2,10 +2,24 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=h1, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/LoginA.css">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <title>Registro</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <form action="SvTransferencia" method="GET">
+        <h1 class ="title"> Saldo Actual </h1>
+        <label>
+            <input placeholder="Ingresa tu nombre" type="text" name="nombr">
+        </label>
+        <label>
+            <input placeholder="Crea una contraseña" type="password" name="contra">
+        </label>
+       <!-- <a href="" class="link">No tienes una cuenta</a>-->
+
+        <button type="submit">Regresar al menu</button>
+
     </body>
 </html>

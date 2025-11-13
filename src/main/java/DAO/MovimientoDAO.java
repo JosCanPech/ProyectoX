@@ -13,10 +13,36 @@ import Movimientos.*;
  * @author octav
  */
 public class MovimientoDAO implements Movimiento {
-
-    private static final String URL = "jdbc:mysql://localhost:3306/banco_db?useSSL=false&serverTimezone=UTC";
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/banco_db";
     private static final String USER = "root";
     private static final String PASS = "";
+    
+    
+    public static void crear(String Nombre, String Contrasena, int NoCuenta){
+        PreparedStatement PT = null;
+        String sql = "INSERT INTO usuarios (Nombre, NoCuenta, Contraseña) VALUES (?, ?, ?)";
+        Connection con = null;
+        try{
+            con = DBconnect.conectar();
+       
+            PT = con.prepareStatement(sql);
+            PT.setString(1, Nombre);
+            PT.setString(2, Contrasena);
+            PT.setInt(3, NoCuenta);    
+            PT.executeUpdate();
+                
+            
+            
+        }catch(Exception e){
+            
+            
+        }
+    }
+    
+    
+    
+    
 
     @Override
     public double Transferencia(Movimientos.Transferencia transferencia, double saldo) {

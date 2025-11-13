@@ -9,13 +9,13 @@
         <title>Registro</title>
     </head>
     <body>
-        <form action="Svinicio" method="GET">
+        <form action="SvRegistro" method="POST">
         <h1 class ="title"> Registrate </h1>
         <label>
-            <input placeholder="Ingresa tu nombre" type="text" name="nocuenta">
+            <input placeholder="Ingresa tu nombre" type="text" name="nombr">
         </label>
         <label>
-            <input placeholder="Contraseña" type="password" name="password">
+            <input placeholder="Crea una contraseña" type="password" name="contra">
         </label>
        <!-- <a href="" class="link">No tienes una cuenta</a>-->
 
