@@ -29,28 +29,33 @@ public class Svinicio extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int Nocuenta = Integer.parseInt(request.getParameter("nocuenta"));
-        String contraseña = request.getParameter("password");
+        
+        try{
+            int Nocuenta = Integer.parseInt(request.getParameter("nocuenta"));
+            String contraseña = request.getParameter("password");
 
-        MovimientoDAO DAO = new MovimientoDAO();
+            MovimientoDAO DAO = new MovimientoDAO();
 
-        DatosSesion datos = DAO.Consulta(Nocuenta, contraseña);
+            DatosSesion datos = DAO.Consulta(Nocuenta, contraseña);
 
-        HttpSession session = request.getSession(true);
-        session.setAttribute("datosUsuario", datos);
-        RequestDispatcher rd = request.getRequestDispatcher("MenuOpciones.jsp");
-        rd.forward(request, response);
+            HttpSession session = request.getSession(true);
+            session.setAttribute("datosUsuario", datos);
+            RequestDispatcher rd = request.getRequestDispatcher("Menu.jsp");
+            rd.forward(request, response);
+        }catch(Exception e){
+            response.sendRedirect("InicioSesion.jsp");
+            }  
     }
     
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String Usuario = request.getParameter("Usua");
-        String Contrasena = request.getParameter("Contra");
+        //String Usuario = request.getParameter("Usua");
+        //String Contrasena = request.getParameter("Contra");
         
-        System.out.println("Usario: "+Usuario);
-        System.out.println("Contrasena: "+Contrasena);
+        //System.out.println("Usario: "+Usuario);
+        //System.out.println("Contrasena: "+Contrasena);
     }
 
 

@@ -28,11 +28,11 @@
         </div>
 
         <div class="menu-options">
-            <form action="TransferenciaForm.jsp" method="GET">
+            <form action="Transferencia.jsp" method="GET">
                 <button type="submit" class="menu-btn">Transferir</button>
             </form>
             
-            <form action="RetiroForm.jsp" method="GET">
+            <form action="Retiro.jsp" method="GET">
                 <button type="submit" class="menu-btn">Retirar</button>
             </form>
         </div>
