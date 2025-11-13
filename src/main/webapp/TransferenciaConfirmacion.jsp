@@ -1,3 +1,4 @@
+<%@page import="Movimientos.DatosSesion"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,14 +10,18 @@
         <title>Registro</title>
     </head>
     <body>
-        <form action="SvTransferencia" method="GET">
+        <%
+        DatosSesion datos = (DatosSesion) session.getAttribute("datosUsuario");
+        if (datos != null) {
+        %>
+        
+        <form action="Menu.jsp" method="">
         <h1 class ="title"> Saldo Actual </h1>
-        <label>
-            <input placeholder="Ingresa tu nombre" type="text" name="nombr">
+        <br>
+        <label>Tu saldo disponible es: <%=datos.getSaldo()%>
+          <!--  <input placeholder="Tu saldo disposile es: " type="text" name="nombr">-->
         </label>
-        <label>
-            <input placeholder="Crea una contraseña" type="password" name="contra">
-        </label>
+     
        <!-- <a href="" class="link">No tienes una cuenta</a>-->
 
         <button type="submit">Regresar al menu</button>

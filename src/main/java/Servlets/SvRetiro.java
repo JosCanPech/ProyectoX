@@ -26,7 +26,7 @@ public class SvRetiro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+       
     }
 
    
@@ -46,6 +46,8 @@ public class SvRetiro extends HttpServlet {
         
         u.setSaldo(SaldoNuevo);
         session.setAttribute("datosUsuario", u);
+        
+        response.sendRedirect("RetiroConfirmacion.jsp");
       
       
         

@@ -23,7 +23,7 @@ public class SvRegistro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nombre_1 = request.getParameter("nombr");
+       /* String nombre_1 = request.getParameter("nombr");
         String password_1 = request.getParameter("contra");
         
         if (nombre_1 == "" || password_1 == ""){
@@ -31,7 +31,7 @@ public class SvRegistro extends HttpServlet {
             
         }else{
             response.sendRedirect("InicioSesion.jsp");
-        }
+        }*/
     }
 
 
@@ -40,15 +40,16 @@ public class SvRegistro extends HttpServlet {
             throws ServletException, IOException {
         String nombre = request.getParameter("nombr");
         String password = request.getParameter("contra");
-        int cuenta = 1234;
-        MovimientoDAO.crear(nombre, password, cuenta);
-        response.sendRedirect("InicioSesion.jsp");
-       
-        
-        
-        
+        int cuenta = 1234;   
+        if (nombre == "" || password == ""){
+            response.sendRedirect("RegistroU.jsp");
+            
+        }else{
+            MovimientoDAO.crear(nombre, password, cuenta);
+            response.sendRedirect("InicioSesion.jsp");
+        }
     }
-
+        
   
     @Override
     public String getServletInfo() {

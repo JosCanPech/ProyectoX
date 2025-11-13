@@ -28,16 +28,20 @@ public class MovimientoDAO implements Movimiento {
        
             PT = con.prepareStatement(sql);
             PT.setString(1, Nombre);
-            PT.setString(2, Contrasena);
-            PT.setInt(3, NoCuenta);    
+            PT.setInt(2, NoCuenta);
+            PT.setString(3, Contrasena);    
             PT.executeUpdate();
-                
-            
-            
         }catch(Exception e){
             
             
         }
+    }
+    
+    
+    
+    
+    public static void actualizarFinalizar(String Nombre, String Contrasena, int NoCuenta, Double Saldo){
+        //Aquí va el codigo para actualizar en la db los datos de la sesion antes de destruirlo
     }
     
     

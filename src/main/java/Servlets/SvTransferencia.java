@@ -48,6 +48,8 @@ public class SvTransferencia extends HttpServlet {
         
         u.setSaldo(SaldoNuevo);
         session.setAttribute("datosUsuario", u);
+        
+        response.sendRedirect("TransferenciaConfirmacion.jsp");
     }
 
     @Override
